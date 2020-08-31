@@ -1,5 +1,12 @@
 
 
+## Testing
+
+- Download inventory_allocator.py and test.py
+- Go to Command Prompt or Terminal (Depending on your Operating System)
+- Move to the inventory-allocator directory
+- Type "python -m unittest test.py"
+
 ## Problem
 
 The problem is compute the best way an order can be shipped (called shipments) given inventory across a set of warehouses (called inventory distribution). 
