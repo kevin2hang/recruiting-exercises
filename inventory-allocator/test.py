@@ -150,6 +150,8 @@ class Test_Inventory_Allocator(unittest.TestCase):
         self.assertEqual(InventoryAllocator.get_cheapest_shipments_and_minimize_shipments(order9,warehouses9), [{'owd': {'peach': 2, 'apple': 4}}, {'dm': {'apple': 4, 'peach': 4}}, {'md': {'apple': 8, 'peach': 6}}])
 
     def test_case_10(self):
+        # Test Case 10: Should ship from warehouses: owd, wm, & md,
+        # BUT if only looking at individual item might say to ship from owd & dm for apple and wm & md for peach (would be incorrect)
         order10 = {
             "apple": 8,
             "peach": 8
@@ -162,7 +164,7 @@ class Test_Inventory_Allocator(unittest.TestCase):
 
     def test_case_11(self):
         # Test Case 11: Should ship from first & last warehouse to minimize cost
-        # If looking only at individual items might say to ship from first two warehouses for apple and first & last warehouse for peach
+        # But if looking only at individual items might say to ship from first two warehouses for apple and first & last warehouse for peach
         order11 = {
             "apple": 6,
             "peach": 9
